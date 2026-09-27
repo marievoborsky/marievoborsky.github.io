@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum · Boa Onda</title>
+<meta name="description" content="Impressum der Website und App Boa Onda.">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+  :root { color-scheme: light dark;
+    --paper: #f4eee2; --card: #fffdf6; --ink: #33294a; --ink-soft: #5c5372; --line: #ddd4c4;
+    --lav: #b9a7e6; --lav-ink: #5a4a9c; --sea: #3fbfae; --sea-pale: #cdeae4; --clay: #c94726; --clay-ink: #9e3818; --clay-soft: #f3cdb9; --sand: #ecd9b4; --sand-ink: #6b500e; }
+  @media (prefers-color-scheme: dark) { :root {
+    --paper: #1f1930; --card: #2c2541; --ink: #f0e8dc; --ink-soft: #b8afc8; --line: #463c5e;
+    --lav: #6a5aa6; --lav-ink: #d5caf5; --sea-pale: #1e4744; --clay-ink: #f2a184; --clay-soft: #4d2a20; --sand: #4a3d2a; --sand-ink: #e9c98a; }
+    .sun { opacity: .28; } }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Space Grotesk", "Avenir Next", -apple-system, sans-serif; background: var(--paper); color: var(--ink);
+    line-height: 1.65; overflow-x: hidden; position: relative; }
+  .sun { position: fixed; top: -60px; right: -70px; width: 230px; height: 230px; border-radius: 50%; background: var(--lav); opacity: .55; pointer-events: none; z-index: 0; }
+  main { max-width: 680px; margin: 0 auto; padding: 1.4rem 16px 4rem; position: relative; z-index: 1; }
+  .mono { font-family: "Roboto Mono", monospace; font-weight: 300; }
+  a { color: var(--lav-ink); }
+  .back { display: inline-flex; align-items: center; min-height: 44px; font-family: "Roboto Mono", monospace; font-weight: 400;
+    font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--ink-soft); margin-bottom: 1.2rem; }
+  h1 { font-size: 1.7rem; font-weight: 700; line-height: 1.15; margin-bottom: .3rem; }
+  .stand { font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .75rem; color: var(--ink-soft); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1.8rem; }
+  h2 { font-size: 1.05rem; font-weight: 600; margin: 1.7rem 0 .45rem; scroll-margin-top: 1rem; }
+  p, li { font-size: .95rem; }
+  p + p { margin-top: .6rem; }
+  ul { padding-left: 1.2rem; margin: .4rem 0; }
+  .box { background: var(--card); border: 1.5px dashed var(--sea); border-radius: 14px; padding: .9rem 1rem; margin: 1.2rem 0; font-size: .95rem; }
+  .todo { background: var(--sand); color: var(--sand-ink); border-radius: 10px; padding: .1rem .4rem; font-weight: 600; }
+  footer { max-width: 680px; margin: 0 auto; padding: 0 16px 3rem; font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .8rem; color: var(--ink-soft); letter-spacing: .1em; text-transform: uppercase; position: relative; z-index: 1; }
+  footer a { color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="sun"></div>
+<main>
+<a class="back" href="index.html">← Boa Onda</a>
+<h1>Impressum</h1>
+<div class="stand">Angaben gemäß § 5 DDG</div>
+
+<!-- PFLICHT VOR VERÖFFENTLICHUNG: Name und ladungsfähige Anschrift (keine Postfach-Adresse) eintragen.
+     Sobald Staffeln verkauft werden, ist die Seite geschäftsmäßig; ohne vollständiges Impressum drohen Abmahnungen.
+     Falls eine Umsatzsteuer-ID vorhanden ist, ergänzen; Kleinunternehmer brauchen keine. -->
+<p><span class="todo">[Name]</span><br><span class="todo">[Straße, PLZ Ort]</span><br>Deutschland</p>
+
+<h2>Kontakt</h2>
+<p>E-Mail: <span class="mono">boaonda.app@gmail.com</span></p>
+
+<h2>Verantwortlich für den Inhalt</h2>
+<p><span class="todo">[Name]</span>, Anschrift wie oben.</p>
+
+<h2>Streitbeilegung</h2>
+<p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+<h2>Bildnachweis</h2>
+<p>Illustrationen, Avatare und Wortmarke: eigene Gestaltung für Boa Onda. Schriften Space Grotesk und Roboto Mono (SIL Open Font License), selbst gehostet.</p>
+
+<h2>Haftung für Links</h2>
+<p>Diese Seite verlinkt auf die App unter marievoborsky.github.io sowie auf GitHub und Formspree. Für die Inhalte verlinkter Seiten sind deren Betreiber verantwortlich.</p>
+</main>
+<footer>Boa Onda · <a href="index.html">Startseite</a> · <a href="datenschutz.html">Datenschutz</a></footer>
+</body>
+</html>

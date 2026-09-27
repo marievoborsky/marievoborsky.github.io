@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boa Onda – Europäisches Portugiesisch lernen</title>
+<meta name="description" content="Boa Onda: Portugiesisch, wie man es in Portugal spricht. Ein A1-Kurs in 28 Tagen als Reise von Porto nach Sagres – echte Dialoge, Wiederholung, Lesetexte zum Antippen. Kein Abo, läuft offline.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4eee2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1f1930" media="(prefers-color-scheme: dark)">
+<!-- Open Graph: DEINE-DOMAIN durch die endgültige Adresse der Seite ersetzen (absolute URLs sind Pflicht). -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Boa Onda">
+<meta property="og:title" content="Boa Onda – Portugiesisch, wie man es in Portugal spricht">
+<meta property="og:description" content="Ein A1-Kurs in 28 Tagen als Reise von Porto nach Sagres. Echte Dialoge, Wiederholung, Lesetexte zum Antippen. Kein Abo, läuft offline.">
+<meta property="og:url" content="https://DEINE-DOMAIN/">
+<meta property="og:image" content="https://DEINE-DOMAIN/assets/og.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Boa Onda: Wortmarke und eine gemalte Welle mit Surfer">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/favicon-192.png">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+  /* Farb-Tokens wie in der App (app/index.html), Text-Töne mit Kontrast ≥ 4,5:1 auf Papier und Karte */
+  :root {
+    color-scheme: light dark;
+    --paper: #f4eee2;
+    --card: #fffdf6;
+    --ink: #33294a;
+    --ink-soft: #5c5372;
+    --line: #ddd4c4;
+    --line-soft: #ebe4d6;
+    --lav: #b9a7e6;
+    --lav-deep: #6c5cb5;
+    --lav-ink: #5a4a9c;
+    --lav-pale: #e6dff5;
+    --sea: #3fbfae;
+    --sea-pale: #cdeae4;
+    --sea-ink: #1b7267;
+    --on-sea: #26203a;
+    --clay: #c94726;
+    --clay-ink: #9e3818;
+    --clay-soft: #f3cdb9;
+    --sand: #ecd9b4;
+    --sand-ink: #6b500e;
+    --shadow: 0 12px 34px rgba(51,41,74,.16);
+    --shadow-soft: 0 3px 14px rgba(51,41,74,.1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1f1930;
+      --card: #2c2541;
+      --ink: #f0e8dc;
+      --ink-soft: #b8afc8;
+      --line: #463c5e;
+      --line-soft: #3d3454;
+      --lav: #6a5aa6;
+      --lav-pale: #3b3160;
+      --lav-ink: #d5caf5;
+      --sea-pale: #1e4744;
+      --sea-ink: #86dfd0;
+      --clay-soft: #4d2a20;
+      --clay-ink: #f2a184;
+      --sand: #4a3d2a;
+      --sand-ink: #e9c98a;
+      --shadow: 0 12px 34px rgba(0,0,0,.35);
+      --shadow-soft: 0 3px 14px rgba(0,0,0,.3);
+    }
+    body::after { mix-blend-mode: screen; opacity: .18; }
+    .sun { opacity: .28; } .wave1 { opacity: .16; } .wave2 { opacity: .14; } .cliff { opacity: .22; }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Space Grotesk", "Avenir Next", -apple-system, sans-serif;
+    background: var(--paper); color: var(--ink);
+    line-height: 1.55; position: relative; overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: var(--lav-ink); }
+  :focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+  i[lang] { font-style: italic; }
+  .mono { font-family: "Roboto Mono", monospace; font-weight: 300; }
+  .kicker { font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .75rem;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .5rem; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* Risograph-Körnung und Collage-Formen wie in der App */
+  body::after {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 5;
+    opacity: .45; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .shape { position: fixed; pointer-events: none; z-index: 0; }
+  .sun { top: -60px; right: -70px; width: 230px; height: 230px; border-radius: 50%; background: var(--lav); opacity: .55; }
+  .wave1 { bottom: -140px; left: -80px; width: 380px; height: 380px;
+    border-radius: 44% 56% 58% 42% / 56% 44% 56% 44%; background: var(--sea); opacity: .25; }
+  .wave2 { bottom: -190px; left: 110px; width: 420px; height: 420px;
+    border-radius: 56% 44% 42% 58% / 44% 58% 42% 56%; background: var(--lav); opacity: .22; }
+  .cliff { top: 220px; left: -110px; width: 210px; height: 260px;
+    border-radius: 62% 38% 55% 45% / 50% 62% 38% 50%; background: var(--clay-soft); opacity: .5; }
+  @media (min-width: 900px) {
+    .sun { width: 420px; height: 420px; top: -140px; right: -120px; }
+    .wave1 { width: 620px; height: 620px; bottom: -260px; left: -160px; }
+    .wave2 { width: 680px; height: 680px; bottom: -340px; left: 260px; }
+  }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; position: relative; z-index: 1; }
+  section { padding: 3.2rem 0; }
+  @media (min-width: 900px) { section { padding: 4.5rem 0; } }
+  h1, h2, h3 { line-height: 1.15; letter-spacing: -.01em; }
+  h2 { font-size: clamp(1.6rem, 4.5vw, 2.3rem); font-weight: 700; margin-bottom: .6rem; }
+  h3 { font-size: 1.1rem; font-weight: 600; }
+  .lead { color: var(--ink-soft); font-size: 1.02rem; max-width: 40rem; }
+  p + p { margin-top: .7rem; }
+
+  /* ---------- Buttons ---------- */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    min-height: 48px; padding: .8rem 1.4rem; border-radius: 14px; border: 2px solid transparent;
+    font: inherit; font-weight: 700; font-size: 1rem; text-decoration: none; cursor: pointer;
+    letter-spacing: .01em; transition: transform .12s ease; }
+  .btn:active { transform: scale(.98); }
+  .btn-primary { background: var(--clay); color: #fff; box-shadow: 0 6px 18px rgba(201,71,38,.3); transform: rotate(-.5deg); }
+  .btn-secondary { background: var(--card); color: var(--ink); border-color: var(--ink); transform: rotate(.4deg); }
+  .btn-row { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-top: 2rem; }
+  .hero .wrap { display: grid; gap: 2rem; align-items: center; }
+  .logo { width: min(78vw, 360px); height: auto; margin-bottom: 1.4rem; }
+  .tagline { font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .75rem;
+    letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 1.6rem; }
+  .hero h1 { font-size: clamp(1.9rem, 6vw, 3rem); font-weight: 700; max-width: 14ch; }
+  .hero .sub { margin-top: 1rem; font-size: 1.1rem; color: var(--ink-soft); max-width: 34rem; }
+  .hero-art { position: relative; margin: 0 auto; width: min(100%, 440px); }
+  .hero-art img { border-radius: 26px; box-shadow: var(--shadow); transform: rotate(2deg); background: var(--card); }
+  .hero-art .stamp { position: absolute; left: -6px; bottom: 22px; background: var(--card); color: var(--clay-ink);
+    border-radius: 999px; padding: .4rem .9rem; font-weight: 700; font-size: .85rem;
+    box-shadow: var(--shadow-soft); transform: rotate(-3deg); }
+  @media (min-width: 820px) {
+    .hero { padding-top: 3.5rem; }
+    .hero .wrap { grid-template-columns: 1.15fr 1fr; gap: 3rem; }
+    .hero-art { width: 100%; max-width: 480px; justify-self: end; }
+  }
+
+  /* ---------- Karten ---------- */
+  .card { background: var(--card); border-radius: 20px; padding: 1.3rem 1.3rem 1.5rem; box-shadow: var(--shadow); }
+  .grid3 { display: grid; gap: 1.4rem; margin-top: 2rem; }
+  @media (min-width: 720px) { .grid3 { grid-template-columns: repeat(3, 1fr); } }
+  .grid3 .card:nth-child(odd) { transform: rotate(.5deg); }
+  .grid3 .card:nth-child(even) { transform: rotate(-.5deg); }
+  .phone { width: min(70%, 230px); margin: 0 auto 1.2rem; border-radius: 26px; overflow: hidden;
+    border: 5px solid var(--ink); background: var(--ink); box-shadow: var(--shadow-soft); }
+  .phone img { width: 100%; }
+  .num { font-family: "Roboto Mono", monospace; font-weight: 400; font-size: .8rem; color: var(--clay-ink); margin-bottom: .3rem; }
+  .card p { color: var(--ink-soft); margin-top: .45rem; font-size: .97rem; }
+
+  /* ---------- Reise ---------- */
+  .reise { display: grid; gap: 2rem; margin-top: 2rem; align-items: start; }
+  @media (min-width: 820px) { .reise { grid-template-columns: minmax(0, 360px) 1fr; gap: 3rem; } }
+  .karte { width: min(100%, 360px); margin: 0 auto; border-radius: 22px; box-shadow: var(--shadow); transform: rotate(-1.2deg); background: var(--card); }
+  .etappen { list-style: none; }
+  .etappen li { display: flex; gap: 1rem; align-items: flex-start; padding: .9rem 0; border-bottom: 1.5px dashed var(--line); }
+  .etappen li:last-child { border-bottom: 0; }
+  .vign { width: 72px; height: 72px; flex: none; object-fit: cover;
+    border-radius: 58% 42% 52% 48% / 48% 55% 45% 52%; box-shadow: var(--shadow-soft); }
+  .etappen .ort { font-weight: 700; font-size: 1.1rem; }
+  .etappen .woche { font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .78rem; color: var(--ink-soft); letter-spacing: .06em; }
+  .etappen p { color: var(--ink-soft); font-size: .95rem; margin-top: .25rem; }
+  .staffeln { margin-top: 1.6rem; display: grid; gap: .8rem; }
+  .staffel { display: flex; gap: .9rem; align-items: center; background: var(--card); border-radius: 14px; padding: .8rem 1rem; box-shadow: var(--shadow-soft); }
+  .staffel:first-child { transform: rotate(.4deg); } .staffel:last-child { transform: rotate(-.4deg); }
+  .staffel .mini { display: flex; flex: none; }
+  .staffel .mini img { width: 44px; height: 44px; object-fit: cover; border-radius: 50%; border: 2px solid var(--card); }
+  .staffel .mini img + img { margin-left: -12px; }
+  .staffel b { display: block; font-weight: 700; }
+  .staffel span { color: var(--ink-soft); font-size: .92rem; }
+  .pill { display: inline-block; font-family: "Roboto Mono", monospace; font-weight: 400; font-size: .7rem; letter-spacing: .08em;
+    text-transform: uppercase; background: var(--sand); color: var(--sand-ink); border-radius: 999px; padding: .15rem .55rem; margin-left: .3rem; vertical-align: middle; }
+
+  /* ---------- Figuren ---------- */
+  .figuren { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-top: 2rem; }
+  @media (min-width: 720px) { .figuren { grid-template-columns: repeat(4, 1fr); } }
+  .figur { text-align: center; }
+  .figur img { width: min(100%, 170px); aspect-ratio: 1; object-fit: cover; margin: 0 auto .8rem; border-radius: 50%; box-shadow: var(--shadow); }
+  .figur:nth-child(odd) img { transform: rotate(-2deg); } .figur:nth-child(even) img { transform: rotate(2deg); }
+  .figur .name { font-weight: 700; font-size: 1.1rem; }
+  .figur .rolle { font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .75rem; color: var(--ink-soft); letter-spacing: .06em; }
+  .figur p { color: var(--ink-soft); font-size: .93rem; margin-top: .4rem; }
+
+  /* ---------- Europäisch ---------- */
+  .punkte { display: grid; gap: 1rem; margin-top: 2rem; }
+  @media (min-width: 720px) { .punkte { grid-template-columns: repeat(3, 1fr); } }
+  .punkt { border-radius: 16px; padding: 1.1rem 1.2rem; }
+  .punkt:nth-child(1) { background: var(--lav-pale); } .punkt:nth-child(2) { background: var(--sea-pale); } .punkt:nth-child(3) { background: var(--clay-soft); }
+  .punkt h3 { font-family: "Roboto Mono", monospace; font-weight: 400; font-size: 1.15rem; margin-bottom: .4rem; }
+  .punkt p { font-size: .95rem; }
+  .tab-wrap { overflow-x: auto; margin-top: 1.6rem; -webkit-overflow-scrolling: touch; }
+  table { border-collapse: collapse; width: 100%; min-width: 420px; background: var(--card); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-soft); }
+  caption { text-align: left; font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); padding-bottom: .5rem; }
+  th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--line-soft); font-size: .95rem; }
+  th { font-weight: 600; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+  td.pt { font-family: "Roboto Mono", monospace; font-weight: 400; color: var(--sea-ink); }
+  td.br { font-family: "Roboto Mono", monospace; font-weight: 300; color: var(--ink-soft); }
+  tr:last-child td { border-bottom: 0; }
+
+  /* ---------- Preis ---------- */
+  .preise { display: grid; gap: 1rem; margin-top: 2rem; }
+  @media (min-width: 720px) { .preise { grid-template-columns: repeat(4, 1fr); } }
+  .preis { background: var(--card); border-radius: 18px; padding: 1.2rem; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; gap: .3rem; }
+  .preis:nth-child(odd) { transform: rotate(.4deg); } .preis:nth-child(even) { transform: rotate(-.4deg); }
+  .preis .stufe { font-family: "Roboto Mono", monospace; font-weight: 400; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+  .preis b { font-size: 1.1rem; }
+  .preis .betrag { font-size: 1.6rem; font-weight: 700; margin-top: auto; padding-top: .6rem; }
+  .preis .betrag.frei { color: var(--sea-ink); }
+  .preis small { color: var(--ink-soft); font-size: .85rem; }
+  .preis.bundle { background: var(--lav-pale); }
+  .versprechen { margin-top: 1.6rem; font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .9rem; color: var(--ink-soft);
+    border: 1.5px dashed var(--line); border-radius: 14px; padding: .9rem 1rem; }
+
+  /* ---------- Formular ---------- */
+  #launch { scroll-margin-top: 1.5rem; }
+  .form-card { background: var(--card); border-radius: 22px; padding: 1.6rem 1.3rem; box-shadow: var(--shadow); max-width: 560px; transform: rotate(-.4deg); margin-top: 1.6rem; }
+  label { display: block; font-weight: 600; margin-bottom: .4rem; }
+  .row { display: flex; flex-wrap: wrap; gap: .7rem; }
+  input[type="email"] { flex: 1 1 220px; min-height: 48px; padding: .7rem .9rem; font: inherit; font-size: 1rem;
+    border: 2px solid var(--line); border-radius: 14px; background: var(--paper); color: var(--ink); }
+  input[type="email"]:focus { border-color: var(--sea); outline: none; box-shadow: 0 0 0 3px var(--sea-pale); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .hinweis { font-size: .85rem; color: var(--ink-soft); margin-top: .9rem; }
+  .oder { margin-top: 1rem; font-size: .95rem; }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 2.5rem 0 3rem; border-top: 1.5px dashed var(--line); margin-top: 1rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; }
+  footer .marke { font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+  footer nav { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+  footer nav a { color: var(--ink); text-decoration: none; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
+  footer nav a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="shape sun"></div>
+<div class="shape cliff"></div>
+<div class="shape wave1"></div>
+<div class="shape wave2"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <img class="logo" src="assets/logo.webp" alt="Boa Onda" width="1200" height="405">
+      <p class="tagline">Europäisches Portugiesisch</p>
+      <h1>Portugiesisch, wie man es in Portugal spricht.</h1>
+      <p class="sub">Eine Reise mit Marie von Porto nach Sagres: 28 Tage, jeden Tag ein Dialog, gesprochen von echten Stimmen aus Portugal.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://marievoborsky.github.io/boa-onda/">App öffnen</a>
+        <a class="btn btn-secondary" href="#launch">Zum Launch benachrichtigen</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="assets/welle.webp" alt="Gouache-Bild: ein Surfer in einer großen türkis-lila Welle vor orangefarbener Sonne" width="1024" height="1024" fetchpriority="high">
+      <span class="stamp">Staffel 1 kostenlos</span>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="lernen">
+  <div class="wrap">
+    <p class="kicker">So lernst du</p>
+    <h2>Jeden Tag eine Welle.</h2>
+    <p class="lead">Eine Lektion dauert etwa 25 Minuten. Alles baut aufeinander auf: Was Marie diese Woche braucht, lernst du diese Woche.</p>
+    <div class="grid3">
+      <article class="card">
+        <div class="phone"><img src="assets/shot-lektion.webp" alt="Screenshot der App: Dialog am Strand von Sagres zwischen Vasco und Marie, darunter eine Übung zum Eintippen" width="780" height="1688" loading="lazy"></div>
+        <p class="num">01</p>
+        <h3>Lektion des Tages mit Dialog und Übungen</h3>
+        <p>Zwölf neue Wörter mit Lautschrift und Audio, ein Dialog mit den vier Stimmen, Grammatik als <i lang="pt">Dica do Vasco</i>. Dann tippst du selbst, und die App prüft sofort.</p>
+      </article>
+      <article class="card">
+        <div class="phone"><img src="assets/shot-heute.webp" alt="Screenshot der App: Startseite mit Tagesziel, dem Knopf „10 Wörter wiederholen“ und der nächsten Lektion" width="780" height="1688" loading="lazy"></div>
+        <p class="num">02</p>
+        <h3>Wiederholung, die sich merkt, was du falsch hattest</h3>
+        <p>Vokabeln und Übungen kommen in wachsenden Abständen wieder. Was gewackelt hat, taucht früher auf, was sitzt, seltener. Jeden Tag ein kurzer Stapel, keine Punktejagd.</p>
+      </article>
+      <article class="card">
+        <div class="phone"><img src="assets/shot-textos.webp" alt="Screenshot der App: Lesetext „A primeira onda“, einzelne Wörter sind farbig markiert und antippbar" width="780" height="1688" loading="lazy"></div>
+        <p class="num">03</p>
+        <h3><i lang="pt">Textos</i> zum Antippen mit Wörterbuch</h3>
+        <p>Zu jeder Lektion ein Lesetext, jeden Tag ein Stück schwerer. Jedes Wort antippen, anhören, nachschlagen. Das Wörterbuch ist gleich daneben.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="reise">
+  <div class="wrap">
+    <p class="kicker">Die Reise</p>
+    <h2>Von Porto bis ans Ende Europas.</h2>
+    <p class="lead">Vier Wochen, vier Orte. Jede Woche ist ein Kapitel mit eigenem Cliffhanger vor dem Wochentest.</p>
+    <div class="reise">
+      <img class="karte" src="assets/karte.webp" alt="Gemalte Karte der portugiesischen Küste mit Reiseroute von Porto über Lissabon und Milfontes nach Sagres" width="896" height="1200" loading="lazy">
+      <div>
+        <ol class="etappen">
+          <li>
+            <img class="vign" src="assets/porto.webp" alt="" width="600" height="600" loading="lazy">
+            <div><span class="ort">Porto</span> <span class="woche">Woche 1 · Ich und du</span>
+              <p>Begrüßen, Herkunft, Alter, erste Fragen. Marie lernt Ana kennen, dann João, der ständig müde ist. Warum eigentlich?</p></div>
+          </li>
+          <li>
+            <img class="vign" src="assets/lisboa.webp" alt="" width="600" height="600" loading="lazy">
+            <div><span class="ort">Lisboa</span> <span class="woche">Woche 2 · Meine Welt</span>
+              <p>Familie, Café, Preise. Die erste eigene Bestellung, und Anas Großmutter redet viel zu schnell.</p></div>
+          </li>
+          <li>
+            <img class="vign" src="assets/milfontes.webp" alt="" width="600" height="600" loading="lazy">
+            <div><span class="ort">Milfontes</span> <span class="woche">Woche 3 · Mein Alltag</span>
+              <p>Tagesablauf, Uhrzeiten, Wohnung, Wetter. Und Pläne machen mit <i lang="pt">ir</i> + Infinitiv, denn im Süden werden die Wellen gut.</p></div>
+          </li>
+          <li>
+            <img class="vign" src="assets/sagres.webp" alt="" width="600" height="600" loading="lazy">
+            <div><span class="ort">Sagres</span> <span class="woche">Woche 4 · Unterwegs</span>
+              <p>Einkaufen, Weg fragen, Restaurant, das erste Gespräch über gestern. Vasco endlich live an der Praia da Mareta.</p></div>
+          </li>
+        </ol>
+        <div class="staffeln">
+          <div class="staffel">
+            <div class="mini"><img src="assets/coimbra.webp" alt="" width="600" height="600" loading="lazy"><img src="assets/alentejo.webp" alt="" width="600" height="600" loading="lazy"></div>
+            <div><b>Staffel 2 · <i lang="pt">A volta</i> <span class="pill">A2</span></b><span>Ein Jahr später: zurück nach Porto, im Van über Coimbra und den Alentejo bis Sagres.</span></div>
+          </div>
+          <div class="staffel">
+            <div class="mini"><img src="assets/lisboa.webp" alt="" width="600" height="600" loading="lazy"></div>
+            <div><b>Staffel 3 · <i lang="pt">Um ano em Lisboa</i> <span class="pill">B1</span></b><span>Ein Jahr in Lissabon: Sprachkurs an der Uni, Joãos Sofa, Frühschicht in der Bäckerei. Im Aufbau, die erste Woche ist da.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="figuren">
+  <div class="wrap">
+    <p class="kicker">Wer mitreist</p>
+    <h2>Vier Stimmen, die du wiedererkennst.</h2>
+    <p class="lead">Jede Figur hat ihre eigene Stimme und ihre eigene Art zu reden. Nach einer Woche weißt du, wer spricht, bevor du den Namen liest.</p>
+    <div class="figuren">
+      <div class="figur">
+        <img src="assets/marie.webp" alt="Gemaltes Porträt von Marie: braune Haare, blaues Kopftuch, Muschelkette" width="600" height="600" loading="lazy">
+        <div class="name">Marie</div><div class="rolle">18 · aus Hamburg</div>
+        <p>Neu in Lissabon, macht Fehler, fragt nach. Ihre Fragen sind deine Fragen.</p>
+      </div>
+      <div class="figur">
+        <img src="assets/ana.webp" alt="Gemaltes Porträt von Ana: schwarzer Bob, Sonnenbrille im Haar, bunte Jacke" width="600" height="600" loading="lazy">
+        <div class="name">Ana</div><div class="rolle">20 · aus Porto</div>
+        <p>Maries erste Freundin in Portugal. Direkt, witzig und felsenfest überzeugt: <i lang="pt">No Porto é melhor!</i></p>
+      </div>
+      <div class="figur">
+        <img src="assets/joao.webp" alt="Gemaltes Porträt von João: schwarze Locken, Schnurrbart, weißes T-Shirt, Espressotasse" width="600" height="600" loading="lazy">
+        <div class="name">João</div><div class="rolle">19 · aus Lissabon</div>
+        <p>Kennt jede Gasse und jeden Miradouro. Ständig müde (<i lang="pt">estou cansado…</i>), aber hellwach, wenn es um seine Stadt geht.</p>
+      </div>
+      <div class="figur">
+        <img src="assets/vasco.webp" alt="Gemaltes Porträt von Vasco: blonde Locken, Bart, Neoprenanzug, Surfbrett" width="600" height="600" loading="lazy">
+        <div class="name">Vasco</div><div class="rolle">Surflehrer in Sagres</div>
+        <p>Erklärt Grammatik ruhig und einfach in der <i lang="pt">Dica do Vasco</i>. Verabschiedet sich immer gleich: <i lang="pt">Boa onda!</i></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="europaeisch">
+  <div class="wrap">
+    <p class="kicker">Warum europäisch</p>
+    <h2>Die Wörter, die du in Lissabon wirklich hörst.</h2>
+    <p class="lead">Die meisten Kurse und Apps unterrichten brasilianisches Portugiesisch. Wer damit in Portugal ankommt, versteht erst einmal wenig. Boa Onda ist von Tag 1 an auf den Klang von Lissabon eingestellt.</p>
+    <div class="punkte">
+      <div class="punkt">
+        <h3><i lang="pt">Bica</i> statt <i lang="pt">cafezinho</i></h3>
+        <p>Der Wortschatz kommt aus Portugal: <i lang="pt">bica</i>, <i lang="pt">autocarro</i>, <i lang="pt">pequeno-almoço</i>, <i lang="pt">telemóvel</i>. Nichts, was dich in der Pastelaria komisch angucken lässt.</p>
+      </div>
+      <div class="punkt">
+        <h3><i lang="pt">Tu</i> statt <i lang="pt">você</i></h3>
+        <p>In Portugal duzt man mit <i lang="pt">tu</i> und den passenden Verbformen: <i lang="pt">tu és, tu falas, tu queres</i>. Du lernst sie von Anfang an, nicht als Fußnote.</p>
+      </div>
+      <div class="punkt">
+        <h3>Das verschluckte <i lang="pt">e</i></h3>
+        <p>Unbetonte Vokale verschwinden fast: <i lang="pt">telefone</i> klingt wie „tlfón“. Alle Dialoge sind so gesprochen, die Lautschrift folgt der Lissabonner Aussprache.</p>
+      </div>
+    </div>
+    <div class="tab-wrap">
+      <table>
+        <caption>Kleine Gegenüberstellung</caption>
+        <thead><tr><th scope="col">Deutsch</th><th scope="col">Portugal</th><th scope="col">Brasilien</th></tr></thead>
+        <tbody>
+          <tr><td>der Espresso</td><td class="pt" lang="pt">a bica</td><td class="br" lang="pt-BR">o cafezinho</td></tr>
+          <tr><td>du bist</td><td class="pt" lang="pt">tu és</td><td class="br" lang="pt-BR">você é</td></tr>
+          <tr><td>der Bus</td><td class="pt" lang="pt">o autocarro</td><td class="br" lang="pt-BR">o ônibus</td></tr>
+          <tr><td>das Handy</td><td class="pt" lang="pt">o telemóvel</td><td class="br" lang="pt-BR">o celular</td></tr>
+          <tr><td>ich bin gerade am Reden</td><td class="pt" lang="pt">estou a falar</td><td class="br" lang="pt-BR">estou falando</td></tr>
+          <tr><td>sechzehn</td><td class="pt" lang="pt">dezasseis</td><td class="br" lang="pt-BR">dezesseis</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="preis">
+  <div class="wrap">
+    <p class="kicker">Preis</p>
+    <h2>Anfangen kostet nichts.</h2>
+    <p class="lead">Staffel 1 ist der komplette A1-Kurs. Wer weiterreisen will, kauft einmal und behält alles.</p>
+    <div class="preise">
+      <div class="preis">
+        <span class="stufe">Staffel 1 · A1</span>
+        <b>Von Porto bis Sagres</b>
+        <small>28 Tage plus Bonus, Vokabelheft, <i lang="pt">Textos</i>, Spiele, Landeskunde</small>
+        <span class="betrag frei">kostenlos</span>
+      </div>
+      <div class="preis">
+        <span class="stufe">Staffel 2 · A2</span>
+        <b><i lang="pt">A volta</i></b>
+        <small>Tag 29 bis 56, Tag 29 ist die freie Probelektion</small>
+        <span class="betrag">14,99 €</span><small>einmalig</small>
+      </div>
+      <div class="preis">
+        <span class="stufe">Staffel 3 · B1</span>
+        <b><i lang="pt">Um ano em Lisboa</i></b>
+        <small>Tag 57 bis 84, im Aufbau</small>
+        <span class="betrag">14,99 €</span><small>einmalig</small>
+      </div>
+      <div class="preis bundle">
+        <span class="stufe">Staffel 2 + 3</span>
+        <b>Beide zusammen</b>
+        <small>A2 und B1, alles Weitere inklusive</small>
+        <span class="betrag">24,99 €</span><small>einmalig</small>
+      </div>
+    </div>
+    <p class="versprechen">Kein Abo. Läuft offline. Deine Daten bleiben auf dem Gerät.</p>
+  </div>
+</section>
+
+<section id="launch">
+  <div class="wrap">
+    <p class="kicker">Zum Launch benachrichtigen</p>
+    <h2>Sag Bescheid, wenn es in den Stores ist.</h2>
+    <p class="lead">Boa Onda läuft schon im Browser. Sobald die App bei Google Play und im App Store steht, bekommst du genau eine E-Mail. Sonst nichts.</p>
+    <div class="form-card">
+      <!-- Formspree einrichten: kostenloses Konto auf https://formspree.io anlegen, „New form“ mit der Ziel-Adresse
+           boaonda.app@gmail.com erstellen. Formspree zeigt dann eine Adresse der Form https://formspree.io/f/abcdwxyz;
+           das Stück nach /f/ ist die ID und ersetzt unten DEIN_FORM_ID. Die erste Einsendung muss einmal per Mail bestätigt werden.
+           Solange die ID fehlt, führt der Knopf auf eine Fehlerseite; der mailto-Link darunter funktioniert immer.
+           Kein Script nötig: Formspree nimmt normale HTML-POSTs an und zeigt danach eine Danke-Seite
+           (eigene Danke-Seite möglich über <input type="hidden" name="_next" value="https://DEINE-DOMAIN/danke.html">). -->
+      <form action="https://formspree.io/f/DEIN_FORM_ID" method="POST">
+        <label for="email">Deine E-Mail-Adresse</label>
+        <div class="row">
+          <input id="email" type="email" name="email" required autocomplete="email" inputmode="email" placeholder="du@beispiel.de">
+          <button class="btn btn-primary" type="submit">Benachrichtigen</button>
+        </div>
+        <input type="hidden" name="_subject" value="Boa Onda: Launch-Benachrichtigung">
+        <input type="hidden" name="_language" value="de">
+        <div class="hp" aria-hidden="true"><label for="hp-feld">Bitte leer lassen</label><input id="hp-feld" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+        <p class="hinweis">Mit dem Absenden erklärst du dich einverstanden, dass deine Adresse über den Dienst Formspree an uns übermittelt und nur für diese eine Nachricht verwendet wird. Danach löschen wir sie. Details in der <a href="datenschutz.html#formular">Datenschutzerklärung</a>.</p>
+      </form>
+      <p class="oder">Lieber ohne Formular? Dann <a href="mailto:boaonda.app@gmail.com?subject=Boa%20Onda%3A%20zum%20Launch%20benachrichtigen">schreib an boaonda.app@gmail.com</a>.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="marke">Boa Onda · Europäisches Portugiesisch</span>
+    <nav aria-label="Rechtliches">
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+      <!-- Instagram, sobald das Konto öffentlich ist:
+      <a href="https://www.instagram.com/boaonda.app/" rel="noopener">Instagram @boaonda.app</a> -->
+    </nav>
+  </div>
+</footer>
+<script>
+// Solange keine Formspree-ID eingetragen ist, geht die Anmeldung per Mail-Programm raus.
+(function(){var f=document.querySelector('form[action*="formspree"]');if(!f||f.action.indexOf('DEIN_FORM_ID')<0)return;
+f.addEventListener('submit',function(e){e.preventDefault();var m=(f.querySelector('input[type=email]')||{}).value||'';
+location.href='mailto:boaonda.app@gmail.com?subject='+encodeURIComponent('Boa Onda: bitte zum Launch benachrichtigen')+'&body='+encodeURIComponent('Meine Adresse: '+m);});})();
+</script>
+</body>
+</html>
