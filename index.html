@@ -444,22 +444,16 @@
     <h2>Sag Bescheid, wenn es in den Stores ist.</h2>
     <p class="lead">Boa Onda läuft schon im Browser. Sobald die App bei Google Play und im App Store steht, bekommst du genau eine E-Mail. Sonst nichts.</p>
     <div class="form-card">
-      <!-- Formspree einrichten: kostenloses Konto auf https://formspree.io anlegen, „New form“ mit der Ziel-Adresse
-           boaonda.app@gmail.com erstellen. Formspree zeigt dann eine Adresse der Form https://formspree.io/f/abcdwxyz;
-           das Stück nach /f/ ist die ID und ersetzt unten DEIN_FORM_ID. Die erste Einsendung muss einmal per Mail bestätigt werden.
-           Solange die ID fehlt, führt der Knopf auf eine Fehlerseite; der mailto-Link darunter funktioniert immer.
-           Kein Script nötig: Formspree nimmt normale HTML-POSTs an und zeigt danach eine Danke-Seite
-           (eigene Danke-Seite möglich über <input type="hidden" name="_next" value="https://DEINE-DOMAIN/danke.html">). -->
-      <form action="https://formspree.io/f/DEIN_FORM_ID" method="POST">
+      <!-- Die Adresse landet in der Supabase-Tabelle launch_list (Frankfurt). Der Publishable Key ist öffentlich;
+           die Tabelle erlaubt per Policy nur das Eintragen, nicht das Lesen. -->
+      <form id="launch-form" action="#" method="POST" novalidate>
         <label for="email">Deine E-Mail-Adresse</label>
         <div class="row">
           <input id="email" type="email" name="email" required autocomplete="email" inputmode="email" placeholder="du@beispiel.de">
           <button class="btn btn-primary" type="submit">Benachrichtigen</button>
         </div>
-        <input type="hidden" name="_subject" value="Boa Onda: Launch-Benachrichtigung">
-        <input type="hidden" name="_language" value="de">
         <div class="hp" aria-hidden="true"><label for="hp-feld">Bitte leer lassen</label><input id="hp-feld" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
-        <p class="hinweis">Mit dem Absenden erklärst du dich einverstanden, dass deine Adresse über den Dienst Formspree an uns übermittelt und nur für diese eine Nachricht verwendet wird. Danach löschen wir sie. Details in der <a href="datenschutz.html#formular">Datenschutzerklärung</a>.</p>
+        <p class="hinweis" id="launch-hinweis">Mit dem Absenden erklärst du dich einverstanden, dass wir deine Adresse auf einem Server in Frankfurt speichern und nur für diese eine Nachricht verwenden. Danach löschen wir sie. Details in der <a href="datenschutz.html#formular">Datenschutzerklärung</a>.</p>
       </form>
       <p class="oder">Lieber ohne Formular? Dann <a href="mailto:boaonda.app@gmail.com?subject=Boa%20Onda%3A%20zum%20Launch%20benachrichtigen">schreib an boaonda.app@gmail.com</a>.</p>
     </div>
@@ -479,10 +473,26 @@
   </div>
 </footer>
 <script>
-// Solange keine Formspree-ID eingetragen ist, geht die Anmeldung per Mail-Programm raus.
-(function(){var f=document.querySelector('form[action*="formspree"]');if(!f||f.action.indexOf('DEIN_FORM_ID')<0)return;
-f.addEventListener('submit',function(e){e.preventDefault();var m=(f.querySelector('input[type=email]')||{}).value||'';
-location.href='mailto:boaonda.app@gmail.com?subject='+encodeURIComponent('Boa Onda: bitte zum Launch benachrichtigen')+'&body='+encodeURIComponent('Meine Adresse: '+m);});})();
+(function(){
+  var f=document.getElementById('launch-form'); if(!f) return;
+  var URL='https://tzyuhwdcjcdyebtajmvu.supabase.co/rest/v1/launch_list', KEY='sb_publishable_Z7HQppHF-MrGJt3ficWyvA_DTlDGJ8x';
+  var hinweis=document.getElementById('launch-hinweis'), btn=f.querySelector('button');
+  function sag(t){ hinweis.textContent=t; }
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var m=(f.querySelector('#email').value||'').trim();
+    if(f.querySelector('#hp-feld').value) return;
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)){ sag('Das sieht noch nicht nach einer E-Mail-Adresse aus.'); return; }
+    btn.disabled=true; sag('Einen Moment …');
+    fetch(URL,{method:'POST',headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({email:m,source:'onepager'})})
+      .then(function(r){
+        if(r.ok||r.status===409){ f.querySelector('#email').value=''; sag(r.status===409?'Die Adresse ist schon eingetragen – du bekommst die Nachricht.':'Danke! Du bekommst genau eine E-Mail, sobald Boa Onda in den Stores ist.'); }
+        else { throw new Error('HTTP '+r.status); }
+      })
+      .catch(function(){ sag('Das hat gerade nicht geklappt. Schreib uns einfach an boaonda.app@gmail.com, dann tragen wir dich ein.'); })
+      .finally(function(){ btn.disabled=false; });
+  });
+})();
 </script>
 </body>
 </html>
