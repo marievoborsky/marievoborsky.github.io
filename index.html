@@ -76,7 +76,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body {
-    font-family: "Space Grotesk", "Avenir Next", -apple-system, sans-serif;
+    font-family: "Roboto Mono", "SF Mono", Menlo, monospace;
     background: var(--paper); color: var(--ink);
     line-height: 1.55; position: relative; overflow-x: hidden;
   }
@@ -114,15 +114,15 @@
   section { padding: 3.2rem 0; }
   @media (min-width: 900px) { section { padding: 4.5rem 0; } }
   h1, h2, h3 { line-height: 1.15; letter-spacing: -.01em; }
-  h2 { font-size: clamp(1.6rem, 4.5vw, 2.3rem); font-weight: 700; margin-bottom: .6rem; }
-  h3 { font-size: 1.1rem; font-weight: 600; }
+  h2 { font-size: clamp(1.6rem, 4.5vw, 2.3rem); font-weight: 600; margin-bottom: .6rem; }
+  h3 { font-size: 1.1rem; font-weight: 500; }
   .lead { color: var(--ink-soft); font-size: 1.02rem; max-width: 40rem; }
   p + p { margin-top: .7rem; }
 
   /* ---------- Buttons ---------- */
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
     min-height: 48px; padding: .8rem 1.4rem; border-radius: 14px; border: 2px solid transparent;
-    font: inherit; font-weight: 700; font-size: 1rem; text-decoration: none; cursor: pointer;
+    font: inherit; font-weight: 600; font-size: 1rem; text-decoration: none; cursor: pointer;
     letter-spacing: .01em; transition: transform .12s ease; }
   .btn:active { transform: scale(.98); }
   .btn-primary { background: var(--clay); color: var(--on-clay); box-shadow: 0 6px 18px rgba(224,137,58,.35); transform: rotate(-.5deg); }
@@ -135,12 +135,12 @@
   .logo { width: min(78vw, 360px); height: auto; margin-bottom: 1.4rem; }
   .tagline { font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .75rem;
     letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 1.6rem; }
-  .hero h1 { font-size: clamp(1.9rem, 6vw, 3rem); font-weight: 700; max-width: 14ch; }
+  .hero h1 { font-size: clamp(1.9rem, 6vw, 3rem); font-weight: 600; max-width: 14ch; }
   .hero .sub { margin-top: 1rem; font-size: 1.1rem; color: var(--ink-soft); max-width: 34rem; }
   .hero-art { position: relative; margin: 0 auto; width: min(100%, 440px); }
   .hero-art img { border-radius: 26px; box-shadow: var(--shadow); transform: rotate(2deg); background: var(--card); }
   .hero-art .stamp { position: absolute; left: -6px; bottom: 22px; background: var(--card); color: var(--clay-ink);
-    border-radius: 999px; padding: .4rem .9rem; font-weight: 700; font-size: .85rem;
+    border-radius: 999px; padding: .4rem .9rem; font-weight: 600; font-size: .85rem;
     box-shadow: var(--shadow-soft); transform: rotate(-3deg); }
   @media (min-width: 820px) {
     .hero { padding-top: 3.5rem; }
@@ -169,7 +169,7 @@
   .etappen li:last-child { border-bottom: 0; }
   .vign { width: 72px; height: 72px; flex: none; object-fit: cover;
     border-radius: 58% 42% 52% 48% / 48% 55% 45% 52%; box-shadow: var(--shadow-soft); }
-  .etappen .ort { font-weight: 700; font-size: 1.1rem; }
+  .etappen .ort { font-weight: 600; font-size: 1.1rem; }
   .etappen .woche { font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .78rem; color: var(--ink-soft); letter-spacing: .06em; }
   .etappen p { color: var(--ink-soft); font-size: .95rem; margin-top: .25rem; }
   .staffeln { margin-top: 1.6rem; display: grid; gap: .8rem; }
@@ -178,7 +178,7 @@
   .staffel .mini { display: flex; flex: none; }
   .staffel .mini img { width: 44px; height: 44px; object-fit: cover; border-radius: 50%; border: 2px solid var(--card); }
   .staffel .mini img + img { margin-left: -12px; }
-  .staffel b { display: block; font-weight: 700; }
+  .staffel b { display: block; font-weight: 600; }
   .staffel span { color: var(--ink-soft); font-size: .92rem; }
   .pill { display: inline-block; font-family: "Roboto Mono", monospace; font-weight: 400; font-size: .7rem; letter-spacing: .08em;
     text-transform: uppercase; background: var(--sand); color: var(--sand-ink); border-radius: 999px; padding: .15rem .55rem; margin-left: .3rem; vertical-align: middle; }
@@ -189,7 +189,7 @@
   .figur { text-align: center; }
   .figur img { width: min(100%, 170px); aspect-ratio: 1; object-fit: cover; margin: 0 auto .8rem; border-radius: 50%; box-shadow: var(--shadow); }
   .figur:nth-child(odd) img { transform: rotate(-2deg); } .figur:nth-child(even) img { transform: rotate(2deg); }
-  .figur .name { font-weight: 700; font-size: 1.1rem; }
+  .figur .name { font-weight: 600; font-size: 1.1rem; }
   .figur .rolle { font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .75rem; color: var(--ink-soft); letter-spacing: .06em; }
   .figur p { color: var(--ink-soft); font-size: .93rem; margin-top: .4rem; }
 
@@ -204,7 +204,7 @@
   table { border-collapse: collapse; width: 100%; min-width: 420px; background: var(--card); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-soft); }
   caption { text-align: left; font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); padding-bottom: .5rem; }
   th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--line-soft); font-size: .95rem; }
-  th { font-weight: 600; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+  th { font-weight: 500; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
   td.pt { font-family: "Roboto Mono", monospace; font-weight: 400; color: var(--sea-ink); }
   td.br { font-family: "Roboto Mono", monospace; font-weight: 300; color: var(--ink-soft); }
   tr:last-child td { border-bottom: 0; }
@@ -216,7 +216,7 @@
   .preis:nth-child(odd) { transform: rotate(.4deg); } .preis:nth-child(even) { transform: rotate(-.4deg); }
   .preis .stufe { font-family: "Roboto Mono", monospace; font-weight: 400; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
   .preis b { font-size: 1.1rem; }
-  .preis .betrag { font-size: 1.6rem; font-weight: 700; margin-top: auto; padding-top: .6rem; }
+  .preis .betrag { font-size: 1.6rem; font-weight: 600; margin-top: auto; padding-top: .6rem; }
   .preis .betrag.frei { color: var(--sea-ink); }
   .preis small { color: var(--ink-soft); font-size: .85rem; }
   .preis.bundle { background: var(--lav-pale); }
@@ -226,7 +226,7 @@
   /* ---------- Formular ---------- */
   #launch { scroll-margin-top: 1.5rem; }
   .form-card { background: var(--card); border-radius: 22px; padding: 1.6rem 1.3rem; box-shadow: var(--shadow); max-width: 560px; transform: rotate(-.4deg); margin-top: 1.6rem; }
-  label { display: block; font-weight: 600; margin-bottom: .4rem; }
+  label { display: block; font-weight: 500; margin-bottom: .4rem; }
   .row { display: flex; flex-wrap: wrap; gap: .7rem; }
   input[type="email"] { flex: 1 1 220px; min-height: 48px; padding: .7rem .9rem; font: inherit; font-size: 1rem;
     border: 2px solid var(--line); border-radius: 14px; background: var(--paper); color: var(--ink); }
@@ -240,7 +240,7 @@
   footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; }
   footer .marke { font-family: "Roboto Mono", monospace; font-weight: 300; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
   footer nav { display: flex; flex-wrap: wrap; gap: 1.2rem; }
-  footer nav a { color: var(--ink); text-decoration: none; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
+  footer nav a { color: var(--ink); text-decoration: none; font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; }
   footer nav a:hover { text-decoration: underline; }
 </style>
 </head>
