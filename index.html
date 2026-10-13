@@ -41,9 +41,9 @@
     --sea-pale: #cdeae4;
     --sea-ink: #1b7267;
     --on-sea: #26203a;
-    --clay: #c94726;
-    --clay-ink: #9e3818;
-    --clay-soft: #f3cdb9;
+    --clay: #e0893a; --on-clay: #33294a;
+    --clay-ink: #a8581a;
+    --clay-soft: #f8d9b8;
     --sand: #ecd9b4;
     --sand-ink: #6b500e;
     --shadow: 0 12px 34px rgba(51,41,74,.16);
@@ -62,8 +62,8 @@
       --lav-ink: #d5caf5;
       --sea-pale: #1e4744;
       --sea-ink: #86dfd0;
-      --clay-soft: #4d2a20;
-      --clay-ink: #f2a184;
+      --clay-soft: #4a3220;
+      --clay-ink: #f3b26b;
       --sand: #4a3d2a;
       --sand-ink: #e9c98a;
       --shadow: 0 12px 34px rgba(0,0,0,.35);
@@ -125,7 +125,7 @@
     font: inherit; font-weight: 700; font-size: 1rem; text-decoration: none; cursor: pointer;
     letter-spacing: .01em; transition: transform .12s ease; }
   .btn:active { transform: scale(.98); }
-  .btn-primary { background: var(--clay); color: #fff; box-shadow: 0 6px 18px rgba(201,71,38,.3); transform: rotate(-.5deg); }
+  .btn-primary { background: var(--clay); color: var(--on-clay); box-shadow: 0 6px 18px rgba(224,137,58,.35); transform: rotate(-.5deg); }
   .btn-secondary { background: var(--card); color: var(--ink); border-color: var(--ink); transform: rotate(.4deg); }
   .btn-row { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
 
