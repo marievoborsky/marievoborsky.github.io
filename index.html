@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Boa Onda – Europäisches Portugiesisch lernen</title>
-<meta name="description" content="Boa Onda: Portugiesisch, wie man es in Portugal spricht. Ein A1-Kurs in 28 Tagen als Reise von Porto nach Sagres – echte Dialoge, Wiederholung, Lesetexte zum Antippen. Kein Abo, läuft offline.">
+<meta name="description" content="Boa Onda: Portugiesisch, wie man es in Portugal spricht. Ein A1-Kurs in 28 Tagen als Reise von Porto nach Sagres – echte Dialoge, Wiederholung, Lesetexte zum Antippen. Zwei Wochen kostenlos, läuft offline.">
+<meta name="apple-itunes-app" content="app-id=6826136196">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f4eee2" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1f1930" media="(prefers-color-scheme: dark)">
-<!-- Open Graph: DEINE-DOMAIN durch die endgültige Adresse der Seite ersetzen (absolute URLs sind Pflicht). -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Boa Onda">
 <meta property="og:title" content="Boa Onda – Portugiesisch, wie man es in Portugal spricht">
-<meta property="og:description" content="Ein A1-Kurs in 28 Tagen als Reise von Porto nach Sagres. Echte Dialoge, Wiederholung, Lesetexte zum Antippen. Kein Abo, läuft offline.">
-<meta property="og:url" content="https://DEINE-DOMAIN/">
-<meta property="og:image" content="https://DEINE-DOMAIN/assets/og.webp">
+<meta property="og:description" content="Ein A1-Kurs in 28 Tagen als Reise von Porto nach Sagres. Echte Dialoge, Wiederholung, Lesetexte zum Antippen. Zwei Wochen kostenlos, läuft offline.">
+<meta property="og:url" content="https://boa-onda.app/">
+<meta property="og:image" content="https://boa-onda.app/assets/og.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Boa Onda: Wortmarke und eine gemalte Welle mit Surfer">
@@ -128,6 +128,7 @@
   .btn-primary { background: var(--clay); color: var(--on-clay); box-shadow: 0 6px 18px rgba(224,137,58,.35); transform: rotate(-.5deg); }
   .btn-secondary { background: var(--card); color: var(--ink); border-color: var(--ink); transform: rotate(.4deg); }
   .btn-row { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
+  .store-hinweis { margin-top: 1rem; font-size: .9rem; color: var(--ink-soft); }
 
   /* ---------- Hero ---------- */
   .hero { padding-top: 2rem; }
@@ -258,9 +259,10 @@
       <h1>Portugiesisch, wie man es in Portugal spricht.</h1>
       <p class="sub">Eine Reise mit Marie von Porto nach Sagres: 28 Tage, jeden Tag ein Dialog, zum Anhören in europäischem Portugiesisch.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="https://boa-onda.app/boa-onda/">App öffnen</a>
-        <a class="btn btn-secondary" href="#launch">Zum Launch benachrichtigen</a>
+        <a class="btn btn-primary" href="https://apps.apple.com/de/app/boa-onda-portugiesisch-lernen/id6826136196" rel="noopener">Im App Store laden</a>
+        <a class="btn btn-secondary" href="https://boa-onda.app/boa-onda/">Im Browser öffnen</a>
       </div>
+      <p class="store-hinweis">Fürs iPhone im App Store. Android folgt bei Google Play: <a href="#launch">Sag mir Bescheid</a>.</p>
     </div>
     <div class="hero-art">
       <img src="assets/welle.webp" alt="Gouache-Bild: ein Surfer in einer großen türkis-lila Welle vor orangefarbener Sonne" width="1024" height="1024" fetchpriority="high">
@@ -440,9 +442,9 @@
 
 <section id="launch">
   <div class="wrap">
-    <p class="kicker">Zum Launch benachrichtigen</p>
-    <h2>Sag Bescheid, wenn es in den Stores ist.</h2>
-    <p class="lead">Boa Onda läuft schon im Browser. Sobald die App bei Google Play und im App Store steht, bekommst du genau eine E-Mail. Sonst nichts.</p>
+    <p class="kicker">Android · Google Play</p>
+    <h2>Sag Bescheid, wenn es bei Google Play ist.</h2>
+    <p class="lead">Fürs iPhone gibt es Boa Onda jetzt <a href="https://apps.apple.com/de/app/boa-onda-portugiesisch-lernen/id6826136196" rel="noopener">im App Store</a>, und im Browser läuft die App auf jedem Gerät. Sobald die Android-App bei Google Play steht, bekommst du genau eine E-Mail. Sonst nichts.</p>
     <div class="form-card">
       <!-- Die Adresse landet in der Supabase-Tabelle launch_list (Frankfurt). Der Publishable Key ist öffentlich;
            die Tabelle erlaubt per Policy nur das Eintragen, nicht das Lesen. -->
@@ -485,7 +487,7 @@
     btn.disabled=true; sag('Einen Moment …');
     fetch(URL,{method:'POST',headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({email:m,source:'onepager'})})
       .then(function(r){
-        if(r.ok||r.status===409){ f.querySelector('#email').value=''; sag(r.status===409?'Die Adresse ist schon eingetragen – du bekommst die Nachricht.':'Danke! Du bekommst genau eine E-Mail, sobald Boa Onda in den Stores ist.'); }
+        if(r.ok||r.status===409){ f.querySelector('#email').value=''; sag(r.status===409?'Die Adresse ist schon eingetragen – du bekommst die Nachricht.':'Danke! Du bekommst genau eine E-Mail, sobald Boa Onda bei Google Play ist.'); }
         else { throw new Error('HTTP '+r.status); }
       })
       .catch(function(){ sag('Das hat gerade nicht geklappt. Schreib uns einfach an boaonda.app@gmail.com, dann tragen wir dich ein.'); })
