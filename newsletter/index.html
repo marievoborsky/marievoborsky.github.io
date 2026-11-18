@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsletter · Boa Onda</title>
+<meta name="description" content="Einmal im Monat ein Stück Portugal: ein Tipp, ein Wort, ein Foto und was es Neues in der App Boa Onda gibt. Europäisches Portugiesisch.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+  :root { color-scheme: light dark;
+    --paper: #f4eee2; --card: #fffdf6; --ink: #33294a; --ink-soft: #5c5372; --line: #ddd4c4;
+    --lav: #b9a7e6; --lav-ink: #5a4a9c; --sea: #3fbfae; --sea-pale: #cdeae4; --clay: #e0893a; --on-clay: #33294a;
+    --shadow: 0 10px 30px rgba(51,41,74,.10); }
+  @media (prefers-color-scheme: dark) { :root {
+    --paper: #1f1930; --card: #2c2541; --ink: #f0e8dc; --ink-soft: #b8afc8; --line: #463c5e;
+    --lav: #6a5aa6; --lav-ink: #d5caf5; --sea-pale: #1e4744; --shadow: 0 10px 30px rgba(0,0,0,.35); }
+    .sun { opacity: .28; } }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Roboto Mono", "SF Mono", Menlo, monospace; letter-spacing: -.04em; background: var(--paper); color: var(--ink);
+    line-height: 1.65; overflow-x: hidden; position: relative; }
+  .sun { position: fixed; top: -60px; right: -70px; width: 230px; height: 230px; border-radius: 50%; background: var(--lav); opacity: .55; pointer-events: none; z-index: 0; }
+  main { max-width: 680px; margin: 0 auto; padding: 1.4rem 16px 4rem; position: relative; z-index: 1; }
+  a { color: var(--lav-ink); }
+  .back { display: inline-flex; align-items: center; min-height: 44px; font-weight: 400;
+    font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--ink-soft); margin-bottom: 1.2rem; }
+  .kicker { font-weight: 300; font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .5rem; }
+  h1 { font-size: 1.7rem; font-weight: 600; line-height: 1.15; margin-bottom: .8rem; }
+  h2 { font-size: 1.05rem; font-weight: 500; margin: 2.2rem 0 .6rem; }
+  .lead { color: var(--ink-soft); font-size: 1.02rem; }
+  .karte, .form-card { background: var(--card); border-radius: 22px; padding: 1.5rem 1.3rem; box-shadow: var(--shadow); margin-top: 1.6rem; }
+  .form-card { transform: rotate(-.4deg); }
+  .karte h2 { margin-top: 0; }
+  .karte p + p { margin-top: .6rem; }
+  label { display: block; font-weight: 500; margin-bottom: .4rem; }
+  .row { display: flex; flex-wrap: wrap; gap: .7rem; }
+  input[type="email"] { flex: 1 1 220px; min-width: 0; min-height: 48px; padding: .7rem .9rem; font: inherit; font-size: 1rem;
+    border: 2px solid var(--line); border-radius: 14px; background: var(--paper); color: var(--ink); }
+  input[type="email"]:focus { border-color: var(--sea); outline: none; box-shadow: 0 0 0 3px var(--sea-pale); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .8rem 1.4rem; border-radius: 14px;
+    border: 2px solid transparent; font: inherit; font-weight: 600; font-size: 1rem; cursor: pointer; letter-spacing: .01em;
+    background: var(--clay); color: var(--on-clay); box-shadow: 0 6px 18px rgba(224,137,58,.35); }
+  .btn:disabled { opacity: .6; cursor: default; }
+  .btn:focus-visible, a:focus-visible { outline: 3px solid var(--sea); outline-offset: 2px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .hinweis { font-size: .85rem; color: var(--ink-soft); margin-top: .9rem; }
+  .status { margin-top: .9rem; font-weight: 500; }
+  .status:empty { display: none; }
+  .archiv { list-style: none; }
+  .archiv li { padding: .55rem 0; border-bottom: 1.5px dashed var(--line); }
+  .archiv .leer { color: var(--ink-soft); border: 0; }
+  footer { max-width: 680px; margin: 0 auto; padding: 0 16px 3rem; font-weight: 300; font-size: .8rem; color: var(--ink-soft);
+    letter-spacing: .1em; text-transform: uppercase; position: relative; z-index: 1; }
+  footer a { color: var(--ink-soft); margin-right: 1.2rem; }
+</style>
+</head>
+<body>
+<div class="sun"></div>
+<main>
+<a class="back" href="../">← Boa Onda</a>
+<p class="kicker">Newsletter</p>
+<h1>Einmal im Monat ein Stück Portugal</h1>
+<p class="lead">Ein Tipp von Ana, ein Wort zum Merken, ein Foto mit einem Satz und was es Neues in der App gibt. Kurz, ohne Werbung von anderen, abmelden mit einem Klick.</p>
+
+<div class="karte" id="nl-karte" hidden aria-live="polite"></div>
+
+<div class="form-card" id="nl-formular-karte">
+  <form id="nl-form" action="#" method="POST" novalidate>
+    <label for="nl-email">Deine E-Mail-Adresse</label>
+    <div class="row">
+      <input id="nl-email" type="email" name="email" required autocomplete="email" inputmode="email" placeholder="du@beispiel.de">
+      <button class="btn" type="submit">Anmelden</button>
+    </div>
+    <div class="hp" aria-hidden="true"><label for="nl-hp">Bitte leer lassen</label><input id="nl-hp" type="text" name="hp" tabindex="-1" autocomplete="off"></div>
+    <p class="status" id="nl-status" role="status" aria-live="polite"></p>
+    <p class="hinweis">Du bekommst gleich eine Mail mit einem Bestätigungslink. Erst wenn du darauf klickst, bist du angemeldet. Abmelden geht jederzeit über den Link in jeder Ausgabe. Mehr dazu in der <a href="../datenschutz.html#newsletter">Datenschutzerklärung</a>.</p>
+  </form>
+</div>
+
+<h2>Bisherige Ausgaben</h2>
+<ul class="archiv">
+<!-- ARCHIV:START · wird von 05_NEWSLETTER/bauen.js --archiv geschrieben -->
+<li class="leer">Die erste Ausgabe ist unterwegs.</li>
+<!-- ARCHIV:ENDE -->
+</ul>
+</main>
+<footer>
+  <a href="../">Boa Onda</a><a href="../datenschutz.html">Datenschutz</a><a href="../impressum.html">Impressum</a>
+</footer>
+<script>
+(function(){
+  var FN = 'https://tzyuhwdcjcdyebtajmvu.supabase.co/functions/v1/newsletter';
+  var UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  var MAIL = 'boaonda.app@gmail.com';
+  var karte = document.getElementById('nl-karte'), formKarte = document.getElementById('nl-formular-karte');
+  var f = document.getElementById('nl-form'), status = document.getElementById('nl-status'), btn = f.querySelector('button');
+
+  function rufe(daten) {
+    return fetch(FN, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(daten) })
+      .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+      .catch(function () { return { ok: false, fehler: 'netz' }; });
+  }
+  function zeige(html) { karte.innerHTML = html; karte.hidden = false; }
+  function ohneToken() { try { history.replaceState(null, '', location.pathname); } catch (e) {} }
+
+  // Anmelden
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var m = (document.getElementById('nl-email').value || '').trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)) { status.textContent = 'Das sieht noch nicht nach einer E-Mail-Adresse aus.'; return; }
+    btn.disabled = true; status.textContent = 'Einen Moment …';
+    rufe({ aktion: 'anmelden', email: m, quelle: 'website', hp: document.getElementById('nl-hp').value })
+      .then(function (j) {
+        if (j.ok && j.status === 'aktiv') status.textContent = 'Diese Adresse bekommt den Newsletter schon.';
+        else if (j.ok) { status.textContent = 'Fast geschafft! Schau in dein Postfach (auch in den Spam-Ordner) und klick auf den Link in der Mail.'; f.reset(); }
+        else if (j.fehler === 'email') status.textContent = 'Das sieht noch nicht nach einer E-Mail-Adresse aus.';
+        else if (j.fehler === 'limit') status.textContent = 'Gerade melden sich sehr viele an. Versuch es bitte morgen noch einmal oder schreib an ' + MAIL + '.';
+        else status.textContent = 'Das hat gerade nicht geklappt. Versuch es später noch einmal oder schreib an ' + MAIL + '.';
+      })
+      .then(function () { btn.disabled = false; });
+  });
+
+  var q = new URLSearchParams(location.search);
+  // Link aus der Bestätigungsmail
+  if (q.has('bestaetigen')) {
+    var tb = q.get('bestaetigen') || '';
+    formKarte.hidden = true;
+    zeige('<p>Einen Moment, ich bestätige deine Anmeldung …</p>');
+    if (!UUID.test(tb)) tb = '';
+    (tb ? rufe({ aktion: 'bestaetigen', t: tb }) : Promise.resolve({ ok: false, fehler: 'link' })).then(function (j) {
+      if (j.ok) {
+        zeige('<h2>' + (j.neu ? 'Danke, du bist dabei!' : 'Du bist schon angemeldet.') + '</h2>' +
+          '<p>Die nächste Ausgabe kommt direkt in dein Postfach. Bis dahin: <a href="../boa-onda/">weiterlernen in der App</a>.</p><p>Boa onda!</p>');
+        ohneToken();
+      } else if (j.fehler === 'link') {
+        zeige('<h2>Dieser Link gilt nicht mehr.</h2><p>Vielleicht ist er älter als 30 Tage oder unvollständig. Melde dich unten einfach noch einmal an.</p>');
+        formKarte.hidden = false; ohneToken();
+      } else {
+        zeige('<h2>Das hat gerade nicht geklappt.</h2><p>Lade die Seite gleich noch einmal neu. Wenn es weiter hakt, schreib an <a href="mailto:' + MAIL + '">' + MAIL + '</a>.</p>');
+      }
+    });
+  }
+  // Abmeldelink aus einer Ausgabe
+  if (q.has('abmelden')) {
+    var ta = q.get('abmelden') || '';
+    if (!UUID.test(ta)) {
+      zeige('<h2>Newsletter abbestellen</h2><p>Nimm dafür den Link ganz unten in deiner Newsletter-Mail. Oder schreib kurz an <a href="mailto:' + MAIL + '?subject=Newsletter%20abmelden">' + MAIL + '</a>, dann trage ich dich aus.</p>');
+    } else {
+      zeige('<h2>Newsletter abbestellen?</h2><p>Danach bekommst du keine Ausgaben mehr, und deine Adresse wird gelöscht.</p>' +
+        '<p style="margin-top:1rem"><button class="btn" type="button" id="nl-ab">Ja, abmelden</button></p>');
+      document.getElementById('nl-ab').addEventListener('click', function () {
+        this.disabled = true;
+        rufe({ aktion: 'abmelden', t: ta }).then(function (j) {
+          if (j.ok) { zeige('<h2>Du bist abgemeldet.</h2><p>Deine Adresse ist gelöscht. Schade, dass du gehst! Wenn du es dir anders überlegst, kannst du dich hier jederzeit wieder anmelden.</p>'); ohneToken(); }
+          else zeige('<h2>Das hat gerade nicht geklappt.</h2><p>Lade die Seite neu und versuch es noch einmal, oder schreib an <a href="mailto:' + MAIL + '?subject=Newsletter%20abmelden">' + MAIL + '</a>.</p>');
+        });
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>
